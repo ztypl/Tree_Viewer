@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/big.png</file>
+        <file>image/export.png</file>
+        <file>image/new.png</file>
+        <file>image/openfile.png</file>
+        <file>image/redo.png</file>
+        <file>image/savefile.png</file>
+        <file>image/small.png</file>
+        <file>image/undo.png</file>
+        <file>image/move.png</file>
+        <file>image/rotate.png</file>
+        <file>image/zoom.png</file>
+        <file>image/blackmove.png</file>
+        <file>image/blackrotate.png</file>
+        <file>image/blackzoom.png</file>
+        <file>image/logo.bmp</file>
+    </qresource>
+</RCC>

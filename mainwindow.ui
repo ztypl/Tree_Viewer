@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>942</width>
+    <height>666</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Tree Viewer</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/image/logo.bmp</normaloff>:/image/logo.bmp</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="TreeViewWidget" name="openGLWidget">
+      <property name="minimumSize">
+       <size>
+        <width>80</width>
+        <height>80</height>
+       </size>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>942</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>  文件  </string>
+    </property>
+    <addaction name="action_new"/>
+    <addaction name="action_open"/>
+    <addaction name="action_save"/>
+    <addaction name="action_othersave"/>
+    <addaction name="action_output"/>
+    <addaction name="action_exit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>  编辑  </string>
+    </property>
+    <addaction name="action_undo"/>
+    <addaction name="action_redo"/>
+    <addaction name="action_move"/>
+    <addaction name="action_rotate"/>
+    <addaction name="action_zoom"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>  帮助  </string>
+    </property>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <property name="floatable">
+    <bool>true</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_new"/>
+   <addaction name="separator"/>
+   <addaction name="action_open"/>
+   <addaction name="separator"/>
+   <addaction name="action_save"/>
+   <addaction name="separator"/>
+   <addaction name="action_output"/>
+   <addaction name="separator"/>
+   <addaction name="action_undo"/>
+   <addaction name="separator"/>
+   <addaction name="action_redo"/>
+   <addaction name="separator"/>
+   <addaction name="separator"/>
+   <addaction name="separator"/>
+   <addaction name="action_move"/>
+   <addaction name="separator"/>
+   <addaction name="action_rotate"/>
+   <addaction name="separator"/>
+   <addaction name="action_zoom"/>
+   <addaction name="separator"/>
+   <addaction name="separator"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="dockWidget_5">
+   <property name="minimumSize">
+    <size>
+     <width>282</width>
+     <height>321</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>282</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="features">
+    <set>QDockWidget::NoDockWidgetFeatures</set>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_5">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLineEdit" name="lineEdit"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="maximumSize">
+          <size>
+           <width>51</width>
+           <height>31</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>搜索</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTreeView" name="treeView">
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_6">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>750</width>
+     <height>187</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>192</height>
+    </size>
+   </property>
+   <property name="features">
+    <set>QDockWidget::NoDockWidgetFeatures</set>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_6">
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QGraphicsView" name="graphicsView">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>101</width>
+           <height>101</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="treename">
+         <property name="minimumSize">
+          <size>
+           <width>99</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>99</width>
+           <height>18</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::AutoText</enum>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="minimumSize">
+          <size>
+           <width>81</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>81</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Position</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QTextBrowser" name="p1">
+         <property name="maximumSize">
+          <size>
+           <width>61</width>
+           <height>31</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QTextBrowser" name="p2">
+         <property name="maximumSize">
+          <size>
+           <width>61</width>
+           <height>31</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QTextBrowser" name="p3">
+         <property name="maximumSize">
+          <size>
+           <width>61</width>
+           <height>31</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>  Angle</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QTextBrowser" name="a1">
+         <property name="maximumSize">
+          <size>
+           <width>61</width>
+           <height>31</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QTextBrowser" name="a2">
+         <property name="maximumSize">
+          <size>
+           <width>61</width>
+           <height>31</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QTextBrowser" name="a3">
+         <property name="maximumSize">
+          <size>
+           <width>61</width>
+           <height>31</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>  Scale</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QTextBrowser" name="s1">
+         <property name="maximumSize">
+          <size>
+           <width>61</width>
+           <height>31</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QTextBrowser" name="s2">
+         <property name="maximumSize">
+          <size>
+           <width>61</width>
+           <height>31</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QTableView" name="infotableView"/>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_7">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="action_new">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/image/new.png</normaloff>:/image/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>新建</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="action_open">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/image/openfile.png</normaloff>:/image/openfile.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="action_save">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/image/savefile.png</normaloff>:/image/savefile.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_output">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/image/export.png</normaloff>:/image/export.png</iconset>
+   </property>
+   <property name="text">
+    <string>导出</string>
+   </property>
+  </action>
+  <action name="action_exit">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="action_undo">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/image/undo.png</normaloff>:/image/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>撤销</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="action_redo">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/image/redo.png</normaloff>:/image/redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>恢复</string>
+   </property>
+  </action>
+  <action name="action_enlarge">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/image/big.png</normaloff>:/image/big.png</iconset>
+   </property>
+   <property name="text">
+    <string>放大</string>
+   </property>
+  </action>
+  <action name="action_shrink">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/image/small.png</normaloff>:/image/small.png</iconset>
+   </property>
+   <property name="text">
+    <string>缩小</string>
+   </property>
+  </action>
+  <action name="action_move">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/image/move.png</normaloff>:/image/move.png</iconset>
+   </property>
+   <property name="text">
+    <string>平移</string>
+   </property>
+   <property name="shortcut">
+    <string>Z</string>
+   </property>
+  </action>
+  <action name="action_rotate">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/image/rotate.png</normaloff>:/image/rotate.png</iconset>
+   </property>
+   <property name="text">
+    <string>旋转</string>
+   </property>
+   <property name="shortcut">
+    <string>X</string>
+   </property>
+  </action>
+  <action name="action_zoom">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/image/zoom.png</normaloff>:/image/zoom.png</iconset>
+   </property>
+   <property name="text">
+    <string>缩放</string>
+   </property>
+   <property name="shortcut">
+    <string>C</string>
+   </property>
+  </action>
+  <action name="action_othersave">
+   <property name="text">
+    <string>另存为</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TreeViewWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>treeviewwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

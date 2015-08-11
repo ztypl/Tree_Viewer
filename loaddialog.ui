@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoadDialog</class>
+ <widget class="QDialog" name="LoadDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>341</width>
+    <height>67</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Loading Model</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>281</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>模型文件较大，初次加载可能花费数秒时间，请稍候</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::NoTextInteraction</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
